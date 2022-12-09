@@ -28,5 +28,22 @@ router.get(
   function (req, res) {}
 );
 
-//addData
+router.post(
+  "/addDashboard",
+  dashboardController.SaveDB,
+  function (req, res) {}
+);
+
+router.put(
+  "/updateDashboard/:id",
+  dashboardController.updateDB,
+  function (req, res) {}
+);
+
+router.delete(
+  "/deleteDashboard/:id",
+  dashboardController.deleteDB,
+  function (req, res) {}
+);
+
 module.exports = router;

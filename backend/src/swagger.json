@@ -197,7 +197,7 @@
         }
       }
     },
-    "/user/{id}": {
+    "/deleteDashboard/{id}": {
       "parameters": [
         {
           "name": "id",

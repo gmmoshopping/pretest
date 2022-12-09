@@ -259,7 +259,7 @@ exports.getByName = (req, res) => {
 
 exports.updateDB = (req, res) => {
     dashboardModel
-    .updateAll(req.params.id, req.body)
+    .updateDB(req.params.id, req.body)
     .then((result) => {
       if (result.length > 0) {
         res.json({
