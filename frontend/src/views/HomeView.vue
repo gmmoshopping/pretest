@@ -15,6 +15,10 @@ import Dashboard from "@/components/Dashboard.vue";
 
 export default {
   name: "HomeView",
+  page: {
+    title: "Coding",
+    meta: [{ name: "description", content: "PreTest" }]
+  },  
   components: {
     Container,
     Footer,

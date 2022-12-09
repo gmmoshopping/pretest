@@ -44,55 +44,31 @@
             <a
               class="nav-link"
               v-scroll-to="'#about'"
-              href="javascript: void(0);"
-              >About</a
+              href="https://www.linkedin.com/in/thanit-netprokaew-240a37149/"
+              >Linkedin</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
               v-scroll-to="'#features'"
-              href="javascript: void(0);"
-              >Features</a
+              href="https://github.com/noom1009/pretest"
+              >Github</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
               v-scroll-to="'#roadmap'"
-              href="javascript: void(0);"
-              >Roadmap</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              v-scroll-to="'#team'"
-              href="javascript: void(0);"
-              >Team</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              v-scroll-to="'#news'"
-              href="javascript: void(0);"
-              >News</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              v-scroll-to="'#faqs'"
-              href="javascript: void(0);"
-              >FAQs</a
+              href="https://th.jobsdb.com/th/th/job/full-stack-developer-bankend-software-engineer-300003002734787?jobId=jobsdb-th-job-300003002734787&sectionRank=1&token=0~cb682348-8492-435e-99db-ac8df2b1866c&searchPath=%2Fth%2Fth%2Fsearch-jobs%2Ffull-stack-developer---bankend---software-engineer%2F1"
+              >Job</a
             >
           </li>
         </ul>
 
         <div class="ms-lg-2">
-          <a href="javascript: void(0);" class="btn btn-outline-success w-xs"
-            >Sign in</a
+          <a href="/about" class="btn btn-outline-success w-xs"
+            >CRUD</a
           >
         </div>
       </div>

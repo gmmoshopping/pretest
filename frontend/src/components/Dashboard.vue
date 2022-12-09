@@ -1,102 +1,182 @@
 <template>
-      <section class="section bg-white" id="news">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-center mb-5">
-                <div class="small-title">Blog</div>
-                <h4>Latest News</h4>
-              </div>
-            </div>
-          </div>         
+  <section class="section bg-white" id="news">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center mb-5">
+            <div class="small-title">Graph</div>
+            <h4>Dashboard</h4>
+          </div>
+        </div>
+      </div>
 
-          <div class="row">
-            <div class="col-xl-4 col-sm-6">
-              <div class="blog-box mb-4 mb-xl-0">
-                <div class="position-relative">
-                  <img
-                    src="@/assets/images/crypto/blog/img-1.jpg"
-                    alt
-                    class="rounded img-fluid mx-auto d-block"
-                  />
-                  <div class="badge bg-success blog-badge font-size-11">Cryptocurrency</div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Pie Chart</h4>
+              <div class="row text-center">
+                <div class="col-sm-4">
+                  <h5 class="mb-0">2536</h5>
+                  <p class="text-muted">Activated</p>
                 </div>
-
-                <div class="mt-4 text-muted">
-                  <p class="mb-2">
-                    <i class="bx bx-calendar me-1"></i> 04 Mar, 2020
-                  </p>
-                  <h5 class="mb-3">Donec pede justo, fringilla vele</h5>
-                  <p>If several languages coalesce, the grammar of the resulting language</p>
-
-                  <div>
-                    <a href="#">Read more</a>
-                  </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">69421</h5>
+                  <p class="text-muted">Pending</p>
+                </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">89854</h5>
+                  <p class="text-muted">Deactivated</p>
                 </div>
               </div>
+              <PieChart :height="140" />
             </div>
+          </div>
+        </div>
 
-            <div class="col-xl-4 col-sm-6">
-              <div class="blog-box mb-4 mb-xl-0">
-                <div class="position-relative">
-                  <img
-                    src="@/assets/images/crypto/blog/img-2.jpg"
-                    alt
-                    class="rounded img-fluid mx-auto d-block"
-                  />
-                  <div class="badge bg-success blog-badge font-size-11">Cryptocurrency</div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Bar Chart</h4>
+              <div class="row text-center">
+                <div class="col-sm-4">
+                  <h5 class="mb-0">2541</h5>
+                  <p class="text-muted">Activated</p>
                 </div>
-
-                <div class="mt-4 text-muted">
-                  <p class="mb-2">
-                    <i class="bx bx-calendar me-1"></i> 12 Feb, 2020
-                  </p>
-                  <h5 class="mb-3">Aenean ut eros et nisl</h5>
-                  <p>Everyone realizes why a new common language would be desirable</p>
-
-                  <div>
-                    <a href="#">Read more</a>
-                  </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">84845</h5>
+                  <p class="text-muted">Pending</p>
+                </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">12001</h5>
+                  <p class="text-muted">Deactivated</p>
                 </div>
               </div>
+              <BarChart :height="300" />
             </div>
+          </div>
+        </div>
 
-            <div class="col-xl-4 col-sm-6">
-              <div class="blog-box mb-4 mb-xl-0">
-                <div class="position-relative">
-                  <img
-                    src="@/assets/images/crypto/blog/img-3.jpg"
-                    alt
-                    class="rounded img-fluid mx-auto d-block"
-                  />
-                  <div class="badge bg-success blog-badge font-size-11">Cryptocurrency</div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Line Chart</h4>
+              <div class="row text-center">
+                <div class="col-sm-4">
+                  <h5 class="mb-0">86541</h5>
+                  <p class="text-muted">Activated</p>
                 </div>
-
-                <div class="mt-4 text-muted">
-                  <p class="mb-2">
-                    <i class="bx bx-calendar me-1"></i> 06 Jan, 2020
-                  </p>
-                  <h5 class="mb-3">In turpis, pellentesque posuere</h5>
-                  <p>To an English person, it will seem like simplified English, as a skeptical Cambridge</p>
-
-                  <div>
-                    <a href="#">Read more</a>
-                  </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">2541</h5>
+                  <p class="text-muted">Pending</p>
+                </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">102030</h5>
+                  <p class="text-muted">Deactivated</p>
                 </div>
               </div>
+              <LineChart :height="300" />
             </div>
-          </div>          
-        </div>        
-      </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Donut Chart</h4>
+              <div class="row text-center">
+                <div class="col-sm-4">
+                  <h5 class="mb-0">9595</h5>
+                  <p class="text-muted">Activated</p>
+                </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">36524</h5>
+                  <p class="text-muted">Pending</p>
+                </div>
+                <div class="col-sm-4">
+                  <h5 class="mb-0">62541</h5>
+                  <p class="text-muted">Deactivated</p>
+                </div>
+              </div>
+              <DonutChart :height="140" />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Polar area Chart</h4>
+            <div class="row text-center">
+              <div class="col-sm-4">
+                <h5 class="mb-0">4852</h5>
+                <p class="text-muted">Activated</p>
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">3652</h5>
+                <p class="text-muted">Pending</p>
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">85412</h5>
+                <p class="text-muted">Deactivated</p>
+              </div>
+            </div>            
+            <PolarChart :height="160" />
+          </div>
+        </div>
+        </div>      
+        <div class="col-sm-4">
+          <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Radar Chart</h4>
+            <div class="row text-center">
+              <div class="col-sm-4">
+                <h5 class="mb-0">694</h5>
+                <p class="text-muted">Activated</p>
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">55210</h5>
+                <p class="text-muted">Pending</p>
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">489498</h5>
+                <p class="text-muted">Deactivated</p>
+              </div>
+            </div>            
+            <RadarChart :height="160" />
+          </div>
+        </div>
+        </div>             
+      </div>
+    </div>
+  </section>
 </template>
 <script>
 import { Carousel, Slide } from "vue-carousel";
+import BarChart from "./BarChart.vue";
+import LineChart from "./LineChart.vue";
+import PieChart from "./PieChart.vue";
+import DonutChart from "./DonutChart.vue";
+import PolarChart from "./PolarChart.vue";
+import RadarChart from "./RadarChart.vue";
+import axios from "axios";
+
 export default {
-  name: "Container",
+  name: "Dashboard",
   props: {
     msg: String,
   },
-  components: { Carousel, Slide },
+  components: {
+    Carousel,
+    Slide,
+    BarChart,
+    LineChart,
+    PieChart,
+    DonutChart,
+    PolarChart,
+    RadarChart,
+  },
   data() {
     return {
       start: "",
@@ -107,7 +187,7 @@ export default {
       hours: "",
       seconds: "",
       starttime: "Nov 5, 2020 15:37:25",
-      endtime: "Dec 31, 2021 16:37:25"
+      endtime: "Dec 31, 2021 16:37:25",
     };
   },
   created() {
@@ -118,15 +198,15 @@ export default {
   },
   mounted() {
     this.start = new Date(this.starttime).getTime();
-    this.end = new Date(this.endtime).getTime();    
+    this.end = new Date(this.endtime).getTime();
     this.timerCount(this.start, this.end);
     this.interval = setInterval(() => {
       this.timerCount(this.start, this.end);
     }, 1000);
   },
   methods: {
-    timerCount: function(start, end) {      
-      var now = new Date().getTime();      
+    timerCount: function (start, end) {
+      var now = new Date().getTime();
       var distance = start - now;
       var passTime = end - now;
       if (distance < 0 && passTime < 0) {
@@ -138,7 +218,7 @@ export default {
         this.calcTime(distance);
       }
     },
-    calcTime: function(dist) {
+    calcTime: function (dist) {
       this.days = Math.floor(dist / (1000 * 60 * 60 * 24));
       this.hours = Math.floor(
         (dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -165,10 +245,9 @@ export default {
     },
     prevSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
-    }
-  }      
+    },
+  },
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
