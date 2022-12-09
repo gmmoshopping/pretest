@@ -1,6 +1,6 @@
 <script>
 import { Radar } from 'vue-chartjs'
-
+import { DashboardService } from "@/api/index.js";
 export default {
   extends: Radar,
   mounted() {

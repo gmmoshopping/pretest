@@ -160,7 +160,7 @@ import PieChart from "./PieChart.vue";
 import DonutChart from "./DonutChart.vue";
 import PolarChart from "./PolarChart.vue";
 import RadarChart from "./RadarChart.vue";
-import axios from "axios";
+import { DashboardService } from "@/api/index.js";
 
 export default {
   name: "Dashboard",
@@ -188,10 +188,12 @@ export default {
       seconds: "",
       starttime: "Nov 5, 2020 15:37:25",
       endtime: "Dec 31, 2021 16:37:25",
+      Data:null,
     };
   },
   created() {
     window.addEventListener("scroll", this.windowScroll);
+    this.getData()
   },
   destroyed() {
     window.removeEventListener("scroll", this.windowScroll);
@@ -205,6 +207,21 @@ export default {
     }, 1000);
   },
   methods: {
+    async getData(){
+      const results = await DashboardService.getData(); 
+      console.warn(results)
+      if(results.messagesboxs == 'unSuccess' ){
+        this.$swal({
+              icon: "warning",
+              title: appConfig.plaseInputContact ,
+              text: appConfig.plaseInputMessageContact ,
+              allowOutsideClick: false,
+            });
+      }else{
+        this.Data = results.result           
+      }
+      return results
+    },    
     timerCount: function (start, end) {
       var now = new Date().getTime();
       var distance = start - now;

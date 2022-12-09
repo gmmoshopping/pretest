@@ -46,7 +46,6 @@ import "echarts/lib/chart/pie";
 import "echarts/lib/chart/scatter";
 import "echarts/lib/chart/candlestick";
 import "echarts/lib/chart/gauge";
-
 import "echarts/lib/component/legend";
 import "echarts/lib/component/title";
 import "echarts/lib/component/tooltip";
@@ -55,7 +54,7 @@ import "echarts/lib/component/toolbox";
 import "echarts/lib/component/grid";
 import "echarts/lib/component/axis";
 import {  pieChart } from "@/api/data";
-
+import { DashboardService } from "@/api/index.js";
 export default {
   name: "Container",
   props: {

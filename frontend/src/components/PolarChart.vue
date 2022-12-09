@@ -1,6 +1,6 @@
 <script>
 import { PolarArea } from 'vue-chartjs'
-
+import { DashboardService } from "@/api/index.js";
 export default {
   extends: PolarArea,
   mounted() {

@@ -1,6 +1,6 @@
 <script>
 import { Line } from 'vue-chartjs'
-
+import { DashboardService } from "@/api/index.js";
 export default {
   extends: Line,
   mounted() {

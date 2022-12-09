@@ -1,6 +1,6 @@
 <script>
 import { Bar } from "vue-chartjs";
-
+import { DashboardService } from "@/api/index.js";
 export default {
   extends: Bar,
   mounted() {
