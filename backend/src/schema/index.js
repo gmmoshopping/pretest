@@ -4,15 +4,13 @@ module.exports = (sequelize, Sequelize) => {
       "tbl_pretest",
       {
         _id: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          autoIncrement: true,           
+          type: DataTypes.STRING(250),
+          allowNull: false,         
           field: "_id",
           primaryKey: true,
         },
         Seed_RepDate: {
-          type: DataTypes.UUID,
-          defaultValue: DataTypes.UUIDV4,
+          type: DataTypes.STRING(250),
           allowNull: true,
           comment: 'Seed_RepDate',   
           field: "Seed_RepDate",
@@ -53,14 +51,14 @@ module.exports = (sequelize, Sequelize) => {
           field: "Seed_Stock2Sale",
         },
         Seed_Season: {
-          type: DataTypes.STRING,
+          type: DataTypes.STRING(250),
           allowNull: true,
           defaultValue: null,
           comment: 'Seed_Season',   
           field: "Seed_Season",
         },
         Seed_Crop_Year: {
-          type: DataTypes.STRING,
+          type: DataTypes.STRING(250),
           allowNull: true,
           defaultValue: null,
           comment: 'Seed_Crop_Year',   

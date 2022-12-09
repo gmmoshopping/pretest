@@ -33,6 +33,7 @@ exports.getData = (req, res) => {
       } else {
         res.json({
           messagesboxs: "unSuccess",
+          Recorde: result.length,
         });
         logger.accessLogger.warn(
           "Warn Call Year by function getAll  " +

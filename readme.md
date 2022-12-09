@@ -6,6 +6,18 @@
 - อื่นๆ ถ้าท่านสามารถทำ function เพิ่มความน่าสนใจได้มากเท่าไหร่จะได้คะแนนพิเศษ
 - Demo สิ่งที่ท่านพัฒนา ตั้งแต่ข้อ 1 ถึงข้อ 4 พร้อมอธิบายเทคนิค วิธีการพัฒนา และเครื่องมือที่ท่านใช้
 
+### Git Clone Master for appove
+```
+git clone https://github.com/noom1009/pretest.git
+```
+
+### Import CSV to Database MySQL
+```
+cd goImport
+go install github.com/go-sql-driver/mysql@latest
+go run .
+```
+
 ### Backend
 - install package nodejs by yarn
 ```
@@ -19,6 +31,7 @@ npm install swagger-ui-express dotenv cors path cookie-parser express-session ba
 ```
 npm install --save-dev jest
 ```
+
 ### Synchronize Sequence Diagrams and Architecture Models
 - File: backend/src/config/index.js  set ModelSynchronization : true ? flase
 
@@ -42,9 +55,4 @@ npm install --save-dev jest
 
 ### Frontend
 ```
-```
-### Import CSV to Database MySQL
-```
-cd goImport
-go install github.com/go-sql-driver/mysql@latest
 ```
