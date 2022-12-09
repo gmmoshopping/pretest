@@ -31,7 +31,7 @@ go install github.com/go-sql-driver/mysql@latest
 go run .
 ```
 
-### Backend
+### Backend create by nodejs by javascript
 - install package nodejs by yarn
 ```
 yarn add swagger-ui-express dotenv cors path cookie-parser express-session base64url body-parser express http nodemon pm2 express sequelize mysql2 jsonwebtoken geoip-lite external-ip winston 
@@ -40,9 +40,10 @@ yarn add swagger-ui-express dotenv cors path cookie-parser express-session base6
 ```
 npm install swagger-ui-express dotenv cors path cookie-parser express-session base64url body-parser express http nodemon pm2 express sequelize mysql2 jsonwebtoken geoip-lite external-ip winston
 ```
-- install package testcase 
+- install package Open Source Javascript Testing Framework by Jestjs  , Supertest คือ Node.js library ที่ Provide High-level Fluent API ให้เราสามารถทำ API Testing ได้อย่างง่ายๆ
 ```
 npm install --save-dev jest
+npm install  --save-dev supertest
 ```
 
 ### Synchronize Sequence Diagrams and Architecture Models
@@ -66,8 +67,10 @@ npm install --save-dev jest
 - http://localhost:4000/api-docs/
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/swagger.png)
 
+### Example test
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/testcase.png)
 
-### Frontend
+### Frontend create by vuejs 
 ```
 vue create frontend
 ```
