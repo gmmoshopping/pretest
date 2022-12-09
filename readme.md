@@ -40,11 +40,6 @@ yarn add swagger-ui-express dotenv cors path cookie-parser express-session base6
 ```
 npm install swagger-ui-express dotenv cors path cookie-parser express-session base64url body-parser express http nodemon pm2 express sequelize mysql2 jsonwebtoken geoip-lite external-ip winston
 ```
-- install package Open Source Javascript Testing Framework by Jestjs  , Supertest คือ Node.js library ที่ Provide High-level Fluent API ให้เราสามารถทำ API Testing ได้อย่างง่ายๆ
-```
-npm install --save-dev jest
-npm install  --save-dev supertest
-```
 
 ### Synchronize Sequence Diagrams and Architecture Models
 - File: backend/src/config/index.js  set ModelSynchronization : true ? flase
@@ -68,9 +63,22 @@ npm install  --save-dev supertest
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/swagger.png)
 
 ### Example test
+- install package Open Source Javascript Testing Framework by Jestjs  , Supertest คือ Node.js library ที่ Provide High-level Fluent API ให้เราสามารถทำ API Testing ได้อย่างง่ายๆ
+```
+npm install --save-dev jest
+npm install  --save-dev supertest
+```
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/testcase.png)
 
 ### Frontend create by vuejs 
 ```
 vue create frontend
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
 ```
+#### In the tailwind.config.js file,
+- replace purge: []
+- with purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}']
+- In the main.js file (in src folder), import index.css
+
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/frontend.png)
