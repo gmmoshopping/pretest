@@ -1,0 +1,39 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Pretest Coding",
+		"version": "1.0",
+		"description": "This is a simple CRUD API application made with Express and documented with Swagger",
+		"contact": {
+			"name": "Mr. Thanit Netprokaew",
+			"url": "https://github.com/noom1009",
+			"email": "noom1009@email.com"
+		}
+	},
+	"consumes": [
+		"application/json"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/dashboard/": {
+			"parameters": [],
+			"get": {
+				"summary": "dashboard",
+				"description": "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"202": {
+						"description": "200 response",
+						"examples": {
+							"application/json": "{ '_id': 1, 'Seed_RepDate': 25640623, 'Seed_Year':2564, 'Seeds_YearWeek':26, 'Seed_Varity':'กข15','Seed_RDCSD':'พะเยา','Seed_Stock2Sale':28675,'Seed_Season':1, 'Seed_Crop_Year':2564  }"
+						}
+					}
+				}
+			}
+		}
+	}
+}
