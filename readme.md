@@ -64,7 +64,7 @@ npm install --save-dev jest
 ```
 ### Document API URL By Swagger
 - http://localhost:4000/api-docs/
-![ScreenShot](https://raw.githubusercontent.com/i-saumitra/Voice-controlled-MP3-Player/master/screenshot.jpg)
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/swagger.png)
 
 
 ### Frontend
