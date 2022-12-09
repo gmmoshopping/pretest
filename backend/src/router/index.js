@@ -15,4 +15,18 @@ router.get(
   dashboardController.getData,
   function (req, res) {}
 );
+
+router.get(
+  "/dashboard/code/:id",
+  dashboardController.getByCode,
+  function (req, res) {}
+);
+
+router.get(
+  "/dashboard/name/:name",
+  dashboardController.getByName,
+  function (req, res) {}
+);
+
+//addData
 module.exports = router;

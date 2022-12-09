@@ -12,9 +12,9 @@ const router = require("./router/index");
 const dbcon = require('./model/index')
 const swaggerUi = require("swagger-ui-express"),
   swaggerDocument = require("./swagger.json");
-
 const SetupsConfig = require('./config/index')
 const oneDay = 1000 * 60 * 60 * 24;
+
 app.use(sessions({
     secret: SetupsConfig.SecretKey,
     saveUninitialized: true,

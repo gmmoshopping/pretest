@@ -33,7 +33,7 @@ exports.getData = (req, res) => {
       } else {
         res.json({
           messagesboxs: "unSuccess",
-          Recorde: result.length,
+          recordcount: result.length,
         });
         logger.accessLogger.warn(
           "Warn Call Year by function getAll  " +
@@ -91,7 +91,7 @@ exports.getData = (req, res) => {
     });
 };
 
-exports.getByCode = (req, res) => {
+exports.getByCode = (req, res) => {  
   dashboardModel
     .findById(req.params.id)
     .then((result) => {
@@ -116,6 +116,7 @@ exports.getByCode = (req, res) => {
       } else {
         res.json({
           messagesboxs: "unSuccess",
+          recordcount: result.length,
         });
         logger.accessLogger.warn(
           "Warn Call Year by function updateData  " +
@@ -173,7 +174,7 @@ exports.getByCode = (req, res) => {
     });
 };
 
-exports.getByCode = (req, res) => {
+exports.getByName = (req, res) => {
     dashboardModel
       .findByName(req.params.name)
       .then((result) => {
@@ -198,6 +199,7 @@ exports.getByCode = (req, res) => {
         } else {
           res.json({
             messagesboxs: "unSuccess",
+            recordcount: result.length,
           });
           logger.accessLogger.warn(
             "Warn Call Year by function updateData  " +
