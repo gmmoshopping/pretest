@@ -1,15 +1,25 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <Navbar />
+    <Container />
+    <Dashboard />
+    <Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+import Container from "@/components/Container.vue";
+import Dashboard from "@/components/Dashboard.vue";
+
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    Container,
+    Footer,
+    Navbar,
+    Dashboard
   },
 };
 </script>
