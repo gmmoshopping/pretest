@@ -1,6 +1,6 @@
 ### Coding pretest Full Stack Developer / Bankend / Software Engineer
 - ติดตั้ง MySQL Database
-- ทำการดาวน์โหลด Dataset ได้ที่ https://drive.google.com/file/d/1RTf4RDgoH73LLnfXCz5WAm6qB_CowSxH/view?usp=share_link ชื่อชุดข้อมูล "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย"
+- ทำการดาวน์โหลด Dataset ชื่อชุดข้อมูล "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย"
 - ทำการเขียนโปรแกรมด้วยภาษาที่ท่านถนัดเพื่อทำการอ่านไฟล์ Dataset แล้ว Import ข้อมุลเข้าไปที่ MySQL
 - ทำการเขียนโปรแกรมด้วยภาษาที่ท่านถนัด (ยกเว้น PHP) โดยพัฒนาเป็น Web Application เพื่อเชื่อมต่อ Database MySQL แล้วนำค่ามาแสดงผลบน Web Application ในลักษณะ Dashboard โดยมีเนื้อหาใน Dashboard ที่ประกอบด้วย กราฟประเภทต่างๆ เช่น Pie Graph, Line Graph, Table และแผนที่ ให้แสดงมากที่สุดเท่าที่จะทำได้
 - อื่นๆ ถ้าท่านสามารถทำ function เพิ่มความน่าสนใจได้มากเท่าไหร่จะได้คะแนนพิเศษ
