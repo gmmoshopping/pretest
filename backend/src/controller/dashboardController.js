@@ -91,7 +91,7 @@ exports.getData = (req, res) => {
     });
 };
 
-exports.getByCode = (req, res) => {  
+exports.getByCode = (req, res) => {
   dashboardModel
     .findById(req.params.id)
     .then((result) => {
@@ -99,16 +99,16 @@ exports.getByCode = (req, res) => {
         res.json({
           result: result.map((items) => {
             return {
-                _id: items._id,
-                Seed_RepDate: items.Seed_RepDate,
-                StartYear: items.f_startyear,
-                Seed_Year: items.Seed_Year,
-                Seeds_YearWeek: items.Seeds_YearWeek,
-                Seed_Varity: items.Seed_Varity,
-                Seed_RDCSD: items.Seed_RDCSD,
-                Seed_Stock2Sale: items.Seed_Stock2Sale,
-                Seed_Season: items.Seed_Season,
-                Seed_Crop_Year: items.Seed_Crop_Year,
+              _id: items._id,
+              Seed_RepDate: items.Seed_RepDate,
+              StartYear: items.f_startyear,
+              Seed_Year: items.Seed_Year,
+              Seeds_YearWeek: items.Seeds_YearWeek,
+              Seed_Varity: items.Seed_Varity,
+              Seed_RDCSD: items.Seed_RDCSD,
+              Seed_Stock2Sale: items.Seed_Stock2Sale,
+              Seed_Season: items.Seed_Season,
+              Seed_Crop_Year: items.Seed_Crop_Year,
             };
           }),
           messagesboxs: "Success",
@@ -175,100 +175,31 @@ exports.getByCode = (req, res) => {
 };
 
 exports.getByName = (req, res) => {
-    dashboardModel
-      .findByName(req.params.name)
-      .then((result) => {
-        if (result.length > 0) {
-          res.json({
-            result: result.map((items) => {
-              return {
-                _id: items._id,
-                Seed_RepDate: items.Seed_RepDate,
-                StartYear: items.f_startyear,
-                Seed_Year: items.Seed_Year,
-                Seeds_YearWeek: items.Seeds_YearWeek,
-                Seed_Varity: items.Seed_Varity,
-                Seed_RDCSD: items.Seed_RDCSD,
-                Seed_Stock2Sale: items.Seed_Stock2Sale,
-                Seed_Season: items.Seed_Season,
-                Seed_Crop_Year: items.Seed_Crop_Year,
-              };
-            }),
-            messagesboxs: "Success",
-          });
-        } else {
-          res.json({
-            messagesboxs: "unSuccess",
-            recordcount: result.length,
-          });
-          logger.accessLogger.warn(
-            "Warn Call Year by function updateData  " +
-              "Send params by " +
-              JSON.stringify(req.params),
-            JSON.stringify(req.body)
-          );
-        }
-      })
-      .catch((error) => {
-        res.status(500).json({
-          messagesboxs: "unSuccess",
-          messages: error,
-        });
-        logger.accessLogger.error(
-          "Error Call Year by function getHospitalCode  " +
-            error.toString() +
-            "Send params by " +
-            JSON.stringify(req.params),
-          JSON.stringify(req.body)
-        );
-      });
-    logger.accessLogger.info(
-      "Info Call Year by function getHospitalCode  " +
-        "Send params by " +
-        JSON.stringify(req.params),
-      JSON.stringify(req.body)
-    );
-    getIP()
-      .then((ip) => {
-        logger.ipAddressLogger.info(
-          "Call Year by function getHospitalCode  Info Publice IP request Server  " +
-            ip +
-            " Private IP " +
-            IP.address() +
-            " Get location " +
-            JSON.stringify(geoip.lookup(ip)) +
-            "Send params by " +
-            JSON.stringify(req.params),
-          JSON.stringify(req.body)
-        );
-      })
-      .catch((error) => {
-        logger.ipAddressLogger.error(
-          "Call Year by function getHospitalCode  Info Publice IP request Server  " +
-            ip +
-            " Private IP " +
-            IP.address() +
-            " Get location " +
-            JSON.stringify(geoip.lookup(ip)) +
-            " Send params by " +
-            JSON.stringify(req.params),
-          JSON.stringify(req.body) + " Message Error : " + error.toString()
-        );
-      });
-  };
-
-exports.updateDB = (req, res) => {
-    dashboardModel
-    .updateDB(req.params.id, req.body)
+  dashboardModel
+    .findByName(req.params.name)
     .then((result) => {
       if (result.length > 0) {
         res.json({
-          result: result,
+          result: result.map((items) => {
+            return {
+              _id: items._id,
+              Seed_RepDate: items.Seed_RepDate,
+              StartYear: items.f_startyear,
+              Seed_Year: items.Seed_Year,
+              Seeds_YearWeek: items.Seeds_YearWeek,
+              Seed_Varity: items.Seed_Varity,
+              Seed_RDCSD: items.Seed_RDCSD,
+              Seed_Stock2Sale: items.Seed_Stock2Sale,
+              Seed_Season: items.Seed_Season,
+              Seed_Crop_Year: items.Seed_Crop_Year,
+            };
+          }),
           messagesboxs: "Success",
         });
       } else {
         res.json({
           messagesboxs: "unSuccess",
+          recordcount: result.length,
         });
         logger.accessLogger.warn(
           "Warn Call Year by function updateData  " +
@@ -280,11 +211,11 @@ exports.updateDB = (req, res) => {
     })
     .catch((error) => {
       res.status(500).json({
-        result: res.status(500),
+        messagesboxs: "unSuccess",
         messages: error,
       });
       logger.accessLogger.error(
-        "Error Call Year by function updateData  " +
+        "Error Call Year by function getHospitalCode  " +
           error.toString() +
           "Send params by " +
           JSON.stringify(req.params),
@@ -292,7 +223,7 @@ exports.updateDB = (req, res) => {
       );
     });
   logger.accessLogger.info(
-    "Info Call Year by function updateData  " +
+    "Info Call Year by function getHospitalCode  " +
       "Send params by " +
       JSON.stringify(req.params),
     JSON.stringify(req.body)
@@ -300,7 +231,7 @@ exports.updateDB = (req, res) => {
   getIP()
     .then((ip) => {
       logger.ipAddressLogger.info(
-        "Call Year by function updateData  Info Publice IP request Server  " +
+        "Call Year by function getHospitalCode  Info Publice IP request Server  " +
           ip +
           " Private IP " +
           IP.address() +
@@ -313,7 +244,7 @@ exports.updateDB = (req, res) => {
     })
     .catch((error) => {
       logger.ipAddressLogger.error(
-        "Call Year by function updateData  Info Publice IP request Server  " +
+        "Call Year by function getHospitalCode  Info Publice IP request Server  " +
           ip +
           " Private IP " +
           IP.address() +
@@ -326,130 +257,78 @@ exports.updateDB = (req, res) => {
     });
 };
 
-exports.deleteDB = (req, res) => {
-    dashboardModel
-    .deleteDB(req.params.id)
-    .then((result) => {
-      res.status(201).json({
+exports.getGroupByProcince = (req, res) => {
+  dashboardModel.getGroupByProvince()
+  .then((result) => {
+    if (result.length > 0) {
+      res.json({
+        result: result.map((items) => {
+          return {
+            Seed_RDCSD: items.Seed_RDCSD,
+            Total: items.Total,
+          };
+        }),
         messagesboxs: "Success",
-        result: result,
       });
-    })
-    .catch((error) => {
-      res.status(500).json({
+    } else {
+      res.json({
         messagesboxs: "unSuccess",
-        messages: error,
+        recordcount: result.length,
       });
-      logger.accessLogger.error(
-        "Error Call Year by function deleteData  " +
-          error.toString() +
+      logger.accessLogger.warn(
+        "Warn Call Year by function updateData  " +
           "Send params by " +
           JSON.stringify(req.params),
         JSON.stringify(req.body)
       );
+    }
+  })
+  .catch((error) => {
+    res.status(500).json({
+      messagesboxs: "unSuccess",
+      messages: error,
     });
-  logger.accessLogger.info(
-    "Info Call Year by function deleteData  " +
-      "Send params by " +
-      JSON.stringify(req.params),
-    JSON.stringify(req.body)
-  );
-  getIP()
-    .then((ip) => {
-      logger.ipAddressLogger.info(
-        "Call Year by function deleteData  Info Publice IP request Server  " +
-          ip +
-          " Private IP " +
-          IP.address() +
-          " Get location " +
-          JSON.stringify(geoip.lookup(ip)) +
-          "Send params by " +
-          JSON.stringify(req.params),
-        JSON.stringify(req.body)
-      );
-    })
-    .catch((error) => {
-      logger.ipAddressLogger.error(
-        "Call Year by function deleteData  Info Publice IP request Server  " +
-          ip +
-          " Private IP " +
-          IP.address() +
-          " Get location " +
-          JSON.stringify(geoip.lookup(ip)) +
-          " Send params by " +
-          JSON.stringify(req.params),
-        JSON.stringify(req.body) + " Message Error : " + error.toString()
-      );
-    });
-};
-
-exports.SaveDB = (req, res) => {
-  let saveData = {
-    _id: req.body._id,
-    Seed_RepDate: req.body.Seed_RepDate,
-    StartYear: req.body.f_startyear,
-    Seed_Year: req.body.Seed_Year,
-    Seeds_YearWeek: req.body.Seeds_YearWeek,
-    Seed_Varity: req.body.Seed_Varity,
-    Seed_RDCSD: req.body.Seed_RDCSD,
-    Seed_Stock2Sale: req.body.Seed_Stock2Sale,
-    Seed_Season: req.body.Seed_Season,
-    Seed_Crop_Year: req.body.Seed_Crop_Year,
-  };
-  dashboardModel
-    .insertDB(saveData)
-    .then((result) => {
-      res.status(201).json({
-        messagesboxs: "Success",
-        result: result,
-      });
-    })
-    .catch((error) => {
-      res.status(500).json({
-        messagesboxs: "unSuccess",
-        messages: error,
-      });
-      logger.accessLogger.error(
-        "Error Call Year by function SaveData  " +
-          error.toString() +
-          "Send params by " +
-          JSON.stringify(req.params),
-        JSON.stringify(req.body)
-      );
-    });
-  logger.accessLogger.info(
-    "Info Call Year by function SaveData  " +
-      "Send params by " +
-      JSON.stringify(req.params),
-    JSON.stringify(req.body)
-  );
-  getIP()
-    .then((ip) => {
-      logger.ipAddressLogger.info(
-        "Call Year by function SaveData  Info Publice IP request Server  " +
-          ip +
-          " Private IP " +
-          IP.address() +
-          " Get location " +
-          JSON.stringify(geoip.lookup(ip)) +
-          "Send params by " +
-          JSON.stringify(req.params),
-        JSON.stringify(req.body)
-      );
-    })
-    .catch((error) => {
-      logger.ipAddressLogger.error(
-        "Call Year by function SaveData  Info Publice IP request Server  " +
-          ip +
-          " Private IP " +
-          IP.address() +
-          " Get location " +
-          JSON.stringify(geoip.lookup(ip)) +
-          " Send params by " +
-          JSON.stringify(req.params),
-        JSON.stringify(req.body) + " Message Error : " + error.toString()
-      );
-    });
+    logger.accessLogger.error(
+      "Error Call Year by function getHospitalCode  " +
+        error.toString() +
+        "Send params by " +
+        JSON.stringify(req.params),
+      JSON.stringify(req.body)
+    );
+  });
+logger.accessLogger.info(
+  "Info Call Year by function getHospitalCode  " +
+    "Send params by " +
+    JSON.stringify(req.params),
+  JSON.stringify(req.body)
+);
+getIP()
+  .then((ip) => {
+    logger.ipAddressLogger.info(
+      "Call Year by function getHospitalCode  Info Publice IP request Server  " +
+        ip +
+        " Private IP " +
+        IP.address() +
+        " Get location " +
+        JSON.stringify(geoip.lookup(ip)) +
+        "Send params by " +
+        JSON.stringify(req.params),
+      JSON.stringify(req.body)
+    );
+  })
+  .catch((error) => {
+    logger.ipAddressLogger.error(
+      "Call Year by function getHospitalCode  Info Publice IP request Server  " +
+        ip +
+        " Private IP " +
+        IP.address() +
+        " Get location " +
+        JSON.stringify(geoip.lookup(ip)) +
+        " Send params by " +
+        JSON.stringify(req.params),
+      JSON.stringify(req.body) + " Message Error : " + error.toString()
+    );
+  });  
 };
 
 exports.dashboardController = (req, res, next) => {};

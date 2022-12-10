@@ -12,6 +12,7 @@ import VueMask from 'v-mask'
 import VueRouter from 'vue-router'
 import vco from "v-click-outside"
 import tinymce from 'vue-tinymce-editor'
+import moment from 'moment'
 import "../src/design/app.scss";
 
 Vue.config.productionTip = false;
@@ -22,7 +23,7 @@ Vue.use(Scrollspy);
 const VueScrollTo = require('vue-scrollto')
 Vue.use(VueScrollTo)
 Vue.config.productionTip = false
-
+Vue.prototype.moment = moment
 Vue.use(BootstrapVue)
 Vue.use(Vuelidate)
 Vue.use(VueMask)

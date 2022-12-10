@@ -3,12 +3,19 @@ const app = express();
 const router = express.Router();
 const path = require("path");
 const dashboardController = require('../controller/dashboardController');
+const crudController = require('../controller/crudController');
 
 router.get("/", (req, res) => {
   res.status(200).json({
     message: "Website : api.pretest.co.th",
   });
 });
+
+router.get(
+  "/dashboardgroupbyprovince",
+  dashboardController.getGroupByProcince,
+  function (req, res) {}
+);
 
 router.get(
   "/dashboard",
@@ -30,19 +37,19 @@ router.get(
 
 router.post(
   "/addDashboard",
-  dashboardController.SaveDB,
+  crudController.SaveDB,
   function (req, res) {}
 );
 
 router.put(
   "/updateDashboard/:id",
-  dashboardController.updateDB,
+  crudController.updateDB,
   function (req, res) {}
 );
 
 router.delete(
   "/deleteDashboard/:id",
-  dashboardController.deleteDB,
+  crudController.deleteDB,
   function (req, res) {}
 );
 

@@ -74,8 +74,25 @@
       "parameters": [],
       "get": {
         "tags": ["Dashboard"],
-        "summary": "dashboard",
+        "summary": "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย",
         "description": "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย",
+        "produces": ["application/json"],
+        "responses": {
+          "202": {
+            "description": "200 response",
+            "examples": {
+              "application/json": "{ '_id': 1, 'Seed_RepDate': 25640623, 'Seed_Year':2564, 'Seeds_YearWeek':26, 'Seed_Varity':'กข15','Seed_RDCSD':'พะเยา','Seed_Stock2Sale':28675,'Seed_Season':1, 'Seed_Crop_Year':2564  }"
+            }
+          }
+        }
+      }
+    },
+    "/dashboardgroupbyprovince/": {
+      "parameters": [],
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย จังหวัด",
+        "description": "ข้อมูลเมล็ดพันธุ์ข้าวที่มีจำหน่าย จังหวัด",
         "produces": ["application/json"],
         "responses": {
           "202": {

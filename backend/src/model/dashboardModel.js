@@ -1,6 +1,7 @@
 const express = require("express");
 const Sequelize = require("sequelize");
 const db = require("../model/index");
+const { QueryTypes } = require("sequelize");
 const Op = db.Sequelize.Op;
 const DashbordDB = db.DashbordDB;
 class dashboardModel {
@@ -74,6 +75,22 @@ class dashboardModel {
       .catch((err) => {
         return err;
       });
+  }
+
+  static getGroupByProvince(){
+    return db.sequelize
+      .query(
+        "SELECT Seed_RDCSD, COUNT(*) as Total FROM tbl_pretest GROUP BY Seed_RDCSD;",
+        {
+          type: db.sequelize.QueryTypes.SELECT,
+        }
+      )
+      .then((result) => {
+        return result;
+      })
+      .catch((err) => {
+        return err;
+      });  
   }
 }
 module.exports = dashboardModel;

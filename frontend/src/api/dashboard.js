@@ -10,5 +10,14 @@ export class DashboardProvider extends HttpRequest {
     } catch (error) {
       return { statusCode: error.response.status };
     }
-  }  
+  }
+  
+  async getGroupByProvince(){
+    try{
+      const { data } = await this.get(`${process.env.VUE_APP_ENDPOINT}`+"/dashboardgroupbyprovince/");
+      return data;
+    }catch (error) {
+      return { statusCode: error.response.status };
+    }
+  }
 }

@@ -9,23 +9,29 @@
               Coding - Dashboard Landing page
             </h1>
             <p class="font-size-14">
-              Web Application in the form of a Dashboard with content in the Dashboard consisting of Graphs such as Pie Graph, Line Graph, Table and Map are displayed as much as possible
+              Web Application in the form of a Dashboard with content in the
+              Dashboard consisting of Graphs such as Pie Graph, Line Graph,
+              Table and Map are displayed as much as possible
             </p>
 
             <div class="button-items mt-4">
-              <a href="https://github.com/noom1009/pretest" class="btn btn-success"
+              <a
+                href="https://github.com/noom1009/pretest"
+                class="btn btn-success"
                 >Github</a
               >
-              <a href="https://www.linkedin.com/in/thanit-netprokaew-240a37149/" class="btn btn-light"
+              <a
+                href="https://www.linkedin.com/in/thanit-netprokaew-240a37149/"
+                class="btn btn-light"
                 >Linkedin</a
               >
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-8 col-sm-10 ms-lg-auto">
+        <div class="col-lg-7 col-md-12 col-sm-10 ms-lg-auto">
           <div class="card overflow-hidden mb-0 mt-5 mt-lg-0">
             <div class="card-header text-center">
-              <h5 class="mb-0">Dashboard Graph</h5>
+              <h5 class="mb-0">Dashboard Graph by province</h5>
             </div>
             <div class="card">
               <v-chart :options="pieChart" autoresize />
@@ -53,8 +59,9 @@ import "echarts/lib/component/polar";
 import "echarts/lib/component/toolbox";
 import "echarts/lib/component/grid";
 import "echarts/lib/component/axis";
-import {  pieChart } from "@/api/data";
+import moment from "moment";
 import { DashboardService } from "@/api/index.js";
+
 export default {
   name: "Container",
   props: {
@@ -63,7 +70,7 @@ export default {
   components: { Carousel, Slide, "v-chart": ECharts },
   data() {
     return {
-      pieChart: pieChart,
+      pieChart: null,
       start: "",
       end: "",
       interval: "",
@@ -71,12 +78,13 @@ export default {
       minutes: "",
       hours: "",
       seconds: "",
-      starttime: "Nov 5, 2020 15:37:25",
-      endtime: "Dec 31, 2021 16:37:25",
+      starttime: moment(new Date()).format("DD-MM-YYYY h:mm:ss"),
+      endtime: moment(new Date()).format("DD-MM-YYYY h:mm:ss"),
     };
   },
   created() {
     window.addEventListener("scroll", this.windowScroll);
+    this.getData();
   },
   destroyed() {
     window.removeEventListener("scroll", this.windowScroll);
@@ -90,6 +98,56 @@ export default {
     }, 1000);
   },
   methods: {
+    async getData() {
+      const results = await DashboardService.getGroupByProvince();
+      if (results.messagesboxs == "unSuccess") {
+        this.$swal({
+          icon: "warning",
+          title: appConfig.plaseInputContact,
+          text: appConfig.plaseInputMessageContact,
+          allowOutsideClick: false,
+        });
+      } else {
+        this.pieChart = {
+          visualMap: {
+            show: false,
+          },
+          tooltip: {
+            trigger: "item",
+            formatter: "{a} <br/>{b} : {c} ({d}%)",
+          },
+          legend: {
+            orient: "vertical",
+            left: "left",
+            textStyle: {
+              color: "#999",
+            },
+          },
+          color: ["#556ee6", "#f1b44c", "#f46a6a", "#50a5f1", "#34c38f"],
+          series: [
+            {
+              name: "Total by province",
+              type: "pie",
+              radius: "55%",
+              center: ["70%", "50%"],
+              data: results.result.map((items) => {
+                return {
+                  name: items.Seed_RDCSD,
+                  value: items.Total,
+                };
+              }),
+              itemStyle: {
+                emphasis: {
+                  shadowBlur: 10,
+                  shadowOffsetX: 0,
+                  shadowColor: "rgba(0, 0, 0, 0.5)",
+                },
+              },
+            },
+          ],
+        };
+      }
+    },
     timerCount: function (start, end) {
       var now = new Date().getTime();
       var distance = start - now;

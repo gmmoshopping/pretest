@@ -24,7 +24,7 @@
 git clone https://github.com/noom1009/pretest.git
 ```
 
-### Import CSV to Database MySQL
+### Import CSV to Database MySQL by golang 
 ```
 cd goImport
 go install github.com/go-sql-driver/mysql@latest
