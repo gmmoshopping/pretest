@@ -34,33 +34,32 @@
         >
           <li class="nav-item">
             <a
-              class="nav-link"
-              v-scroll-to="'#home'"
-              href="javascript: void(0);"
+              class="nav-link"              
+              href="/"
               >Home</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
-              v-scroll-to="'#about'"
               href="https://www.linkedin.com/in/thanit-netprokaew-240a37149/"
+              target="_blank"
               >Linkedin</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
-              v-scroll-to="'#features'"
               href="https://github.com/noom1009/pretest"
+              target="_blank"
               >Github</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link"
-              v-scroll-to="'#roadmap'"
+              class="nav-link"              
               href="https://th.jobsdb.com/th/th/job/full-stack-developer-bankend-software-engineer-300003002734787?jobId=jobsdb-th-job-300003002734787&sectionRank=1&token=0~cb682348-8492-435e-99db-ac8df2b1866c&searchPath=%2Fth%2Fth%2Fsearch-jobs%2Ffull-stack-developer---bankend---software-engineer%2F1"
+              target="_blank"
               >Job</a
             >
           </li>

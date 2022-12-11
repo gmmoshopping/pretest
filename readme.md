@@ -81,7 +81,8 @@ npx tailwindcss init -p
 - with purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}']
 - In the main.js file (in src folder), import index.css
 
-![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/frontend.png)
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/frontend1.png)
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/frontend2.png)
 
 ### CRUD Application
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/crud.png)
