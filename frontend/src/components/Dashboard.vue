@@ -15,20 +15,6 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Pie Chart</h4>
-              <div class="row text-center">
-                <div class="col-sm-4">
-                  <h5 class="mb-0">2536</h5>
-                  <p class="text-muted">Activated</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">69421</h5>
-                  <p class="text-muted">Pending</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">89854</h5>
-                  <p class="text-muted">Deactivated</p>
-                </div>
-              </div>
               <PieChart :height="140" />
             </div>
           </div>
@@ -38,20 +24,6 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Bar Chart</h4>
-              <div class="row text-center">
-                <div class="col-sm-4">
-                  <h5 class="mb-0">2541</h5>
-                  <p class="text-muted">Activated</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">84845</h5>
-                  <p class="text-muted">Pending</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">12001</h5>
-                  <p class="text-muted">Deactivated</p>
-                </div>
-              </div>
               <BarChart :height="300" />
             </div>
           </div>
@@ -61,20 +33,6 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Line Chart</h4>
-              <div class="row text-center">
-                <div class="col-sm-4">
-                  <h5 class="mb-0">86541</h5>
-                  <p class="text-muted">Activated</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">2541</h5>
-                  <p class="text-muted">Pending</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">102030</h5>
-                  <p class="text-muted">Deactivated</p>
-                </div>
-              </div>
               <LineChart :height="300" />
             </div>
           </div>
@@ -86,20 +44,6 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Donut Chart</h4>
-              <div class="row text-center">
-                <div class="col-sm-4">
-                  <h5 class="mb-0">9595</h5>
-                  <p class="text-muted">Activated</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">36524</h5>
-                  <p class="text-muted">Pending</p>
-                </div>
-                <div class="col-sm-4">
-                  <h5 class="mb-0">62541</h5>
-                  <p class="text-muted">Deactivated</p>
-                </div>
-              </div>
               <DonutChart :height="140" />
             </div>
           </div>
@@ -107,21 +51,7 @@
         <div class="col-sm-4">
           <div class="card">
           <div class="card-body">
-            <h4 class="card-title mb-4">Polar area Chart</h4>
-            <div class="row text-center">
-              <div class="col-sm-4">
-                <h5 class="mb-0">4852</h5>
-                <p class="text-muted">Activated</p>
-              </div>
-              <div class="col-sm-4">
-                <h5 class="mb-0">3652</h5>
-                <p class="text-muted">Pending</p>
-              </div>
-              <div class="col-sm-4">
-                <h5 class="mb-0">85412</h5>
-                <p class="text-muted">Deactivated</p>
-              </div>
-            </div>            
+            <h4 class="card-title mb-4">Polar area Chart</h4>         
             <PolarChart :height="160" />
           </div>
         </div>
@@ -129,21 +59,7 @@
         <div class="col-sm-4">
           <div class="card">
           <div class="card-body">
-            <h4 class="card-title mb-4">Radar Chart</h4>
-            <div class="row text-center">
-              <div class="col-sm-4">
-                <h5 class="mb-0">694</h5>
-                <p class="text-muted">Activated</p>
-              </div>
-              <div class="col-sm-4">
-                <h5 class="mb-0">55210</h5>
-                <p class="text-muted">Pending</p>
-              </div>
-              <div class="col-sm-4">
-                <h5 class="mb-0">489498</h5>
-                <p class="text-muted">Deactivated</p>
-              </div>
-            </div>            
+            <h4 class="card-title mb-4">Radar Chart</h4>       
             <RadarChart :height="160" />
           </div>
         </div>

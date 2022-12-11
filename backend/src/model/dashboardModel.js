@@ -80,7 +80,7 @@ class dashboardModel {
   static getGroupByProvince(){
     return db.sequelize
       .query(
-        "SELECT Seed_RDCSD, COUNT(*) as Total FROM tbl_pretest GROUP BY Seed_RDCSD;",
+        "SELECT Seed_Year, Seed_RDCSD, COUNT(*) as Total FROM tbl_pretest GROUP BY Seed_RDCSD, Seed_Year;",
         {
           type: db.sequelize.QueryTypes.SELECT,
         }

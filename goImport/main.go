@@ -49,7 +49,7 @@ func main() {
 		fmt.Println(plan._id + " , " + plan.Seed_RepDate + " , " + plan.Seed_Year + " , " + plan.Seeds_YearWeek + " , " + plan.Seed_Varity + " , " + plan.Seed_RDCSD + " , " + plan.Seed_Stock2Sale + " , " + plan.Seed_Season + " , " + plan.Seed_Crop_Year)
 		fmt.Println("Go lang Insert")
 
-		db, err := sql.Open("mysql", "root:Irisgroup@tcp(127.0.0.1:3306)/pretest")
+		db, err := sql.Open("mysql", "root:#Iris@2013@tcp(127.0.0.1:3306)/pretest")
 		defer db.Close()
 		if err != nil {
 			panic(err.Error())
