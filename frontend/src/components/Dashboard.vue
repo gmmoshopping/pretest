@@ -11,6 +11,16 @@
       </div>
 
       <div class="row">
+        
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Donut Chart</h4>
+              <DonutChart />
+            </div>
+          </div>
+        </div>   
+
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
@@ -40,29 +50,12 @@
 
         <div class="col-sm-6">
           <div class="card">
-            <div class="card-body">
-              <h4 class="card-title mb-4">Donut Chart</h4>
-              <DonutChart />
-            </div>
-          </div>
-        </div>     
-        
-        <div class="col-sm-6">
-          <div class="card">
           <div class="card-body">
             <h4 class="card-title mb-4">Polar Area Charts</h4>         
             <PolarChart />
           </div>
         </div>
-        </div>      
-        <div class="col-sm-6">
-          <div class="card">
-          <div class="card-body">
-            <h4 class="card-title mb-4">Radar Chart</h4>       
-            <RadarChart  />
-          </div>
-        </div>
-        </div>      
+        </div>       
 
       </div>
     </div>
