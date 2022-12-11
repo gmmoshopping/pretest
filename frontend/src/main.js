@@ -13,6 +13,7 @@ import VueRouter from 'vue-router'
 import vco from "v-click-outside"
 import tinymce from 'vue-tinymce-editor'
 import moment from 'moment'
+
 import "../src/design/app.scss";
 
 Vue.config.productionTip = false;
@@ -29,6 +30,7 @@ Vue.use(Vuelidate)
 Vue.use(VueMask)
 Vue.use(require('vue-chartist'))
 Vue.use(VueSweetalert2);
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyAbvyBxmMbFhrzP9Z8moyYr6dCr-pzjhBE',

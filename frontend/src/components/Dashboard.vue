@@ -11,59 +11,59 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title mb-4">Pie Chart</h4>
-              <PieChart :height="140" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title mb-4">Bar Chart</h4>
-              <BarChart :height="300" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Line Chart</h4>
-              <LineChart :height="300" />
+              <PieChart />
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Column Chart</h4>
+              <BarChart />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Bar Chart</h4>
+              <LineChart />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
               <h4 class="card-title mb-4">Donut Chart</h4>
-              <DonutChart :height="140" />
+              <DonutChart />
             </div>
           </div>
-        </div>
-        <div class="col-sm-4">
+        </div>     
+        
+        <div class="col-sm-6">
           <div class="card">
           <div class="card-body">
-            <h4 class="card-title mb-4">Polar area Chart</h4>         
-            <PolarChart :height="160" />
+            <h4 class="card-title mb-4">Polar Area Charts</h4>         
+            <PolarChart />
           </div>
         </div>
         </div>      
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="card">
           <div class="card-body">
             <h4 class="card-title mb-4">Radar Chart</h4>       
-            <RadarChart :height="160" />
+            <RadarChart  />
           </div>
         </div>
-        </div>             
+        </div>      
+
       </div>
     </div>
   </section>

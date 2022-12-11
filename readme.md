@@ -82,3 +82,7 @@ npx tailwindcss init -p
 - In the main.js file (in src folder), import index.css
 
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/frontend.png)
+
+### CRUD Application
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/crud.png)
+![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/table.png)
