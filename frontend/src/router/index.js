@@ -16,6 +16,11 @@ const routes = [
     name: "about",
     component: AboutView,
   },
+  {
+    path: "/about/:id",
+    name: "about",
+    component: AboutView,
+  },
 ];
 
 const router = new VueRouter({

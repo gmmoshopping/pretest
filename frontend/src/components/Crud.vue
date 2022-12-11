@@ -190,7 +190,6 @@ export default {
         Seed_Season: this.Seed_Season,
         Seed_Crop_Year: this.Seed_Crop_Year,
       };
-      console.log(payload);
       const results = await DashboardService.getSave(payload);
       if (results.messagesboxs == "unSuccess") {
         this.$swal({
