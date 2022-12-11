@@ -1,5 +1,5 @@
 <script>
-import { Pie } from 'vue-chartjs'
+import { Pie } from "vue-chartjs";
 import { DashboardService } from "@/api/index.js";
 export default {
   extends: Pie,
@@ -14,13 +14,13 @@ export default {
   mounted() {
     this.renderChart(
       {
-        labels: ['Desktops', 'Tablets'],
+        labels: ["Desktops", "Tablets"],
         datasets: [
           {
-            data: [300, 180],
-            backgroundColor: ['#34c38f', '#ebeff2'],
-            hoverBackgroundColor: ['#34c38f', '#ebeff2'],
-            hoverBorderColor: '#fff',
+            data: this.ChartData [300, 180],
+            backgroundColor: ["#34c38f", "#ebeff2"],
+            hoverBackgroundColor: ["#34c38f", "#ebeff2"],
+            hoverBorderColor: "#fff",
           },
         ],
       },
@@ -28,7 +28,7 @@ export default {
         maintainAspectRatio: true,
         responsive: true,
       }
-    )
+    );
   },
   methods: {
     async getData() {
@@ -42,15 +42,14 @@ export default {
         });
       } else {
         this.ChartData = results.result.map((items) => {
-                return {
-                  name: items.Seed_RDCSD,
-                  value: items.Total,
-                };
-              })
-              console.log(this.ChartData)
-        return this.ChartData
+          return {
+            name: items.Seed_RDCSD,
+            value: items.Total,
+          };
+        });
+        return this.ChartData;
       }
     },
-  }
-}
+  },
+};
 </script>
