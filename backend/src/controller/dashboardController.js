@@ -265,6 +265,7 @@ exports.getGroupByProcince = (req, res) => {
         result: result.map((items) => {
           return {
             Seed_RDCSD: items.Seed_RDCSD,
+            Seed_Year: items.Seed_Year,
             Total: items.Total,
           };
         }),

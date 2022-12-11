@@ -3,6 +3,14 @@ import { Pie } from 'vue-chartjs'
 import { DashboardService } from "@/api/index.js";
 export default {
   extends: Pie,
+  data() {
+    return {
+      ChartData: null,
+    };
+  },
+  created() {
+    this.getData();
+  },
   mounted() {
     this.renderChart(
       {
@@ -22,5 +30,27 @@ export default {
       }
     )
   },
+  methods: {
+    async getData() {
+      const results = await DashboardService.getGroupByProvince();
+      if (results.messagesboxs == "unSuccess") {
+        this.$swal({
+          icon: "warning",
+          title: appConfig.plaseInputContact,
+          text: appConfig.plaseInputMessageContact,
+          allowOutsideClick: false,
+        });
+      } else {
+        this.ChartData = results.result.map((items) => {
+                return {
+                  name: items.Seed_RDCSD,
+                  value: items.Total,
+                };
+              })
+              console.log(this.ChartData)
+        return this.ChartData
+      }
+    },
+  }
 }
 </script>
