@@ -13,6 +13,7 @@ import VueRouter from 'vue-router'
 import vco from "v-click-outside"
 import tinymce from 'vue-tinymce-editor'
 import moment from 'moment'
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 import "../src/design/app.scss";
 

@@ -99,7 +99,6 @@
                   </div>
 
                   <div class="row">
-
                     <div class="col-lg-4">
                       <b-form-group
                         class="mb-3"
@@ -130,7 +129,9 @@
                   </div>
 
                   <div>
-                    <b-button type="submit" variant="primary">Save</b-button>
+                    <b-button type="submit" variant="primary" @click="getData()"
+                      >Save</b-button
+                    >
                     &nbsp;
                     <b-button type="reset" variant="danger">Clear</b-button>
                   </div>
@@ -138,14 +139,14 @@
               </div>
               <div class="card-body" v-if="formSubmitted">
                 <h3>Form Submitted</h3>
-                <p>id: {{ id }}</p>   
+                <p>id: {{ id }}</p>
                 <p>Seed_RepDate: {{ Seed_RepDate }}</p>
                 <p>Seed_Year: {{ Seed_Year }}</p>
-                <p>Seeds_YearWeek: {{ Seeds_YearWeek }}</p>   
-                <p>Seed_Varity: {{ Seed_Varity }}</p>   
+                <p>Seeds_YearWeek: {{ Seeds_YearWeek }}</p>
+                <p>Seed_Varity: {{ Seed_Varity }}</p>
                 <p>Seed_RDCSD: {{ Seed_RDCSD }}</p>
                 <p>Seed_Season: {{ Seed_Season }}</p>
-                <p>Seed_Crop_Year: {{ Seed_Crop_Year }}</p> 
+                <p>Seed_Crop_Year: {{ Seed_Crop_Year }}</p>
                 <small> Save Data </small>
               </div>
             </div>
@@ -156,11 +157,13 @@
   </section>
 </template>
 <script>
+import { DashboardService } from "@/api/index.js";
 export default {
   name: "CRUD",
   components: {},
   data() {
     return {
+      id: 0,
       Seed_Crop_Year: null,
       Seed_RepDate: null,
       Seed_Season: null,
@@ -175,6 +178,38 @@ export default {
   methods: {
     submitForm: function () {
       this.formSubmitted = true;
+    },
+    async getData() {
+      let payload = {
+        _id: this.id,
+        Seed_RepDate: this.Seed_RepDate,
+        Seed_Year: this.Seed_Year,
+        Seeds_YearWeek: this.Seeds_YearWeek,
+        Seed_Varity: this.Seed_Varity,
+        Seed_RDCSD: this.Seed_RDCSD,
+        Seed_Season: this.Seed_Season,
+        Seed_Crop_Year: this.Seed_Crop_Year,
+      };
+      console.log(payload);
+      const results = await DashboardService.getSave(payload);
+      if (results.messagesboxs == "unSuccess") {
+        this.$swal({
+          icon: "warning",
+          title: results.messagesboxs,
+          text: results.messagesboxs,
+          allowOutsideClick: false,
+        });
+      } else {
+        this.$swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: results.messagesboxs,
+          text: results.messagesboxs,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        this.$router.go();
+      }
     },
   },
 };
