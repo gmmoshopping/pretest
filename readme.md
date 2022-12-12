@@ -87,3 +87,8 @@ npx tailwindcss init -p
 ### CRUD Application
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/crud.png)
 ![ScreenShot](https://github.com/noom1009/pretest/blob/main/doc/table.png)
+
+### docker
+```
+docker-compose up -d
+```
