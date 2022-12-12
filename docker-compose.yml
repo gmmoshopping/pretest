@@ -7,7 +7,7 @@ services:
       - 3306:3306
     volumes:
       - "./server/data:/var/lib/mysql"
-      - ./serverdata/log/:/var/log/mysql         
+      - ./server/data/log/:/var/log/mysql         
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: pretest
@@ -27,7 +27,7 @@ services:
 
   pretest-backend:
     depends_on:
-      - pretest-mysql
+      - pretest-networks
     build: ./backend
     ports:
       - 4000:4000
@@ -44,50 +44,7 @@ services:
       - 80:8080
     networks:
       - pretest-networks
-
-  # rabbitmq:
-  #   image: rabbitmq:3.11.2-management
-  #   container_name: rabbitmq
-  #   ports:
-  #     - 5672:5672
-  #     - 15672:15672
-  #   environment:      
-  #     RABBITMQ_DEFAULT_USER: user
-  #     RABBITMQ_DEFAULT_PASS: password      
-  #   volumes:
-  #     - ./server/rabbitmq/data/:/var/lib/rabbitmq/
-  #     - ./server/rabbitmq/log/:/var/log/rabbitmq
-  #   networks:
-  #     - pretest-network
-
-  # redis:
-  #   image: redis
-  #   command: redis-server --requirepass password
-  #   volumes:
-  #     - ./server/redis/log/:/var/lib/redis
-  #     - ./server/redis/config/:/usr/local/etc/redis/redis.conf
-  #   ports:
-  #     - 6379:6379
-  #   networks:
-  #     - pretest-network
-
-  # redis-commander:
-  #   image: rediscommander/redis-commander
-  #   restart: always
-  #   environment:
-  #     REDIS_HOSTS: redis
-  #     REDIS_HOST: redis
-  #     REDIS_PORT: redis:6379
-  #     REDIS_PASSWORD: password
-  #     HTTP_USER: root
-  #     HTTP_PASSWORD: password
-  #   expose:
-  #     - 8082      
-  #   ports:
-  #     - 8082:8081
-  #   networks:
-  #     - pretest-network
-
 networks:
   pretest-networks:
-    name: pretest-networks   
+    name: pretest-networks  
+  

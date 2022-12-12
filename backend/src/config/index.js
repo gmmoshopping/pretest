@@ -4,7 +4,7 @@ const SetupsConfig = {
     SrvProt: "4000",
     ModelSynchronization: false,
     DBuser: "root",
-    DBhost: "localhost",
+    DBhost: "pretest-mysql",
     DBdatabase: "pretest",
     DBpassword: "password",
     DBdialect:'mysql',
