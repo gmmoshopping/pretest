@@ -17,8 +17,8 @@ const routes = [
     component: AboutView,
   },
   {
-    path: "/about/:id",
-    name: "about",
+    path: "/update/:id",
+    name: "update",
     component: AboutView,
   },
 ];

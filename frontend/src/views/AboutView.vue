@@ -12,8 +12,6 @@ import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import CRUD from "@/components/Crud.vue";
 import Datatable from "@/components/Datatable.vue";
-
-
 export default {
   name: "HomeView",
   page: {
@@ -25,7 +23,6 @@ export default {
     Datatable,
     Footer,
     Navbar,
-    
   },
 };
 </script>

@@ -6,7 +6,7 @@
         <div class="col-lg-12 col-md-12 col-sm-10 ms-lg-auto">
           <div class="card overflow-hidden mb-0 mt-5 mt-lg-0">
             <div class="card-header text-center">
-              <h5 class="mb-0">CRUD Application</h5>
+              <h5 class="mb-0">CRUD Application mode : {{ mode }}</h5>
             </div>
             <div class="card">
               <div class="card-body">
@@ -173,14 +173,65 @@ export default {
       Seed_Varity: null,
       id: null,
       formSubmitted: false,
+      mode: "create",
+      payload: null,
     };
+  },
+  async created() {
+    if (this.$route.query.id != null) {
+      this.mode = "update";
+      const results = await DashboardService.getSearch(this.$route.query.id);
+      if (results.messagesboxs == "unSuccess") {
+        this.$swal({
+          icon: "warning",
+          title: results.messagesboxs,
+          text: results.messagesboxs,
+          allowOutsideClick: false,
+        });
+      } else {
+        for (let i = 0; i < results.result.length; i++) {
+          this.id = results.result[i]._id;
+          this.Seed_Crop_Year = results.result[i].Seed_Crop_Year;
+          this.Seed_RepDate = results.result[i].Seed_RepDate;
+          this.Seed_Season = results.result[i].Seed_Season;
+          this.Seed_RDCSD = results.result[i].Seed_RDCSD;
+          this.Seed_Year = results.result[i].Seed_Year;
+          this.Seeds_YearWeek = results.result[i].Seeds_YearWeek;
+          this.Seed_Varity = results.result[i].Seed_Varity;
+        }
+      }
+    } else if (this.$route.params.id != null) {
+      this.mode = "update";
+      const results = await DashboardService.getSearch(this.$route.params.id);
+      if (results.messagesboxs == "unSuccess") {
+        this.$swal({
+          icon: "warning",
+          title: results.messagesboxs,
+          text: results.messagesboxs,
+          allowOutsideClick: false,
+        });
+      } else {
+        for (let i = 0; i < results.result.length; i++) {
+          this.id = results.result[i]._id;
+          this.Seed_Crop_Year = results.result[i].Seed_Crop_Year;
+          this.Seed_RepDate = results.result[i].Seed_RepDate;
+          this.Seed_Season = results.result[i].Seed_Season;
+          this.Seed_RDCSD = results.result[i].Seed_RDCSD;
+          this.Seed_Year = results.result[i].Seed_Year;
+          this.Seeds_YearWeek = results.result[i].Seeds_YearWeek;
+          this.Seed_Varity = results.result[i].Seed_Varity;
+        }
+      }
+    } else {
+      this.mode = "create";
+    }
   },
   methods: {
     submitForm: function () {
       this.formSubmitted = true;
     },
     async getData() {
-      let payload = {
+      this.payload = {
         _id: this.id,
         Seed_RepDate: this.Seed_RepDate,
         Seed_Year: this.Seed_Year,
@@ -190,24 +241,57 @@ export default {
         Seed_Season: this.Seed_Season,
         Seed_Crop_Year: this.Seed_Crop_Year,
       };
-      const results = await DashboardService.getSave(payload);
-      if (results.messagesboxs == "unSuccess") {
+      if (this.mode == "create") {
+        const results = await DashboardService.getSave(this.payload);
+        if (results.messagesboxs == "unSuccess") {
+          this.$swal({
+            icon: "warning",
+            title: results.messagesboxs,
+            text: results.messagesboxs,
+            allowOutsideClick: false,
+          });
+        } else {
+          this.$swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: results.messagesboxs,
+            text: results.messagesboxs,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.$router.go();
+        }
+      } else if (this.mode == "update") {
+        const results = await DashboardService.getUpdate(
+          this.$route.params.id,
+          this.payload
+        );
+        if (results.messagesboxs == "unSuccess") {
+          this.$swal({
+            icon: "warning",
+            title: results.messagesboxs,
+            text: results.messagesboxs,
+            allowOutsideClick: false,
+          });
+        } else {
+          this.$swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: results.messagesboxs,
+            text: results.messagesboxs,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.$router.push({ path: "/" });
+          this.$router.go();
+        }
+      } else {
         this.$swal({
           icon: "warning",
-          title: results.messagesboxs,
-          text: results.messagesboxs,
+          title: "",
+          text: "",
           allowOutsideClick: false,
         });
-      } else {
-        this.$swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: results.messagesboxs,
-          text: results.messagesboxs,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        this.$router.go();
       }
     },
   },

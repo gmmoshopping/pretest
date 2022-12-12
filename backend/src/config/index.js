@@ -6,7 +6,7 @@ const SetupsConfig = {
     DBuser: "root",
     DBhost: "localhost",
     DBdatabase: "pretest",
-    DBpassword: "Irisgroup",
+    DBpassword: "#Iris@2013",
     DBdialect:'mysql',
     DBport: 3306,
   };

@@ -2,7 +2,7 @@ FROM node
 
 WORKDIR /src
 COPY package.json .
-RUN yarn install
+RUN npm install
 COPY . .
 
 EXPOSE 4000

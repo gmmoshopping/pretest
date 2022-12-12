@@ -50,7 +50,7 @@
                 @filtered="onFiltered"
               >
                 <template #cell(id)="data">
-                  <a :href="`about/${data.value}`">{{ data.value }}</a>
+                  <a :href="`update/${data.value}`">{{ data.value }}</a>
                 </template>
                 <template #cell(actions)="row">
         <b-button size="sm" @click="editRow(row.item)" class="mr-1">
@@ -181,7 +181,6 @@ export default {
       return this.activitiesData, this.activitieslength;
     },
    async deleteRow(item){
-      console.log('deleteRow',item.id)
       const results = await DashboardService.getDelete(item.id);
       if (results.messagesboxs == "unSuccess") {
         this.$swal({
@@ -203,7 +202,8 @@ export default {
       }      
     },
     editRow(item){
-      console.log('editRow',item.id)
+      this.$router.push({ path: "/update/"+item.id });
+      this.$router.go();
     }
   },
 };
