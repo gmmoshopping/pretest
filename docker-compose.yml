@@ -12,7 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: pretest
     networks:
-      - pretest-networks
+      - pretest-networks 
 
   pretest-phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -23,11 +23,11 @@ services:
       PMA_USER: root
       PMA_HOSTS: pretest-mysql
     networks:
-      - pretest-networks
+      - pretest-networks 
 
   pretest-backend:
     depends_on:
-      - pretest-networks
+      - pretest-mysql
     build: ./backend
     ports:
       - 4000:4000
@@ -36,14 +36,14 @@ services:
       PMA_USER: root
       PMA_HOSTS: pretest-mysql
     networks:
-      - pretest-networks
+      - pretest-networks 
 
   pretest-frontend:
     build: ./frontend
     ports:
       - 80:8080
     networks:
-      - pretest-networks
+      - pretest-networks 
 networks:
   pretest-networks:
     name: pretest-networks  
